@@ -9,3 +9,8 @@ RUN cd cgit && make
 FROM debian AS runtime
 
 COPY --from=builder /cgit/cgit /app/cgit
+COPY --from=builder /cgit/cgit.css /app/cgit.css
+COPY --from=builder /cgit/cgit.js /app/cgit.js
+COPY --from=builder /cgit/cgit.png /app/cgit.png
+COPY --from=builder /cgit/favicon.ico /app/favicon.ico
+COPY --from=builder /cgit/robots.txt /app/robots.txt
